@@ -551,7 +551,7 @@ async def reminder_scheduler():
             completed_days = done + partial + missed
 
             # Завершение привычки после 21 дня
-            if completed_days >= 1:
+            if completed_days >= 21:
                 cursor.execute("UPDATE habits SET is_active = 0 WHERE id = ?", (habit_id,))
                 conn.commit()
 
